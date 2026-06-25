@@ -1,4 +1,5 @@
 import Hero from "../sections/Hero/Hero";
+import README from "../sections/README/README";
 
 import { useFile } from "../context/FileContext";
 
@@ -6,10 +7,10 @@ export default function FileRenderer() {
 
     const { activeFile } = useFile();
 
-    switch (activeFile) {
+    switch (activeFile?.type) {
 
         case "readme":
-            return <Hero />;
+            return <README />;
 
         case "projects":
             return <h1 className="text-white text-4xl">Projects</h1>;

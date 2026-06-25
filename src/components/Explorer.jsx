@@ -10,7 +10,11 @@ import {
 
 export default function Explorer() {
 
-    const { activeFile, setActiveFile } = useFile();
+    
+    const {
+    activeFile,
+    openFile
+} = useFile();
 
     const getIcon = (type) => {
 
@@ -52,7 +56,7 @@ export default function Explorer() {
 
                         key={file.id}
 
-                        onClick={() => setActiveFile(file.type)}
+                        onClick={() => openFile(file.type)}
 
                         className={`
 

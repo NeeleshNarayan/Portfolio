@@ -1,25 +1,36 @@
 const files = [
-    {
-        id: 1,
-        name: "README.md",
-        type: "readme"
-    },
-    {
-        id: 2,
-        name: "Projects.jsx",
-        type: "projects"
-    },
-    {
-        id: 3,
-        name: "Skills.json",
-        type: "skills"
-    },
-    {
-        id: 4,
-        name: "Contact.sh",
-        type: "contact"
-    }
+  {
+    id: "readme",
+    name: "README.md",
+    type: "readme",
+    extension: "md",
+    icon: "markdown",
+    component: "README",
+  },
+  {
+    id: "projects",
+    name: "Projects.jsx",
+    type: "projects",
+    extension: "jsx",
+    icon: "react",
+    component: "Projects",
+  },
+  {
+    id: "skills",
+    name: "Skills.json",
+    type: "skills",
+    extension: "json",
+    icon: "json",
+    component: "Skills",
+  },
+  {
+    id: "contact",
+    name: "Contact.sh",
+    type: "contact",
+    extension: "sh",
+    icon: "terminal",
+    component: "Contact",
+  },
 ];
 
 export default files;
-
