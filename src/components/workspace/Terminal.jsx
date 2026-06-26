@@ -1,69 +1,125 @@
-import { useState } from "react";
-import commands from "../../data/terminalCommands";
+import { useState, useRef, useEffect } from "react";
+import { useFile } from "../../context/FileContext";
+import executeCommand from "../../terminal/executeCommand";
+import { VscChevronDown, VscChevronRight } from "react-icons/vsc";
 
-export default function Terminal() {
+export default function Terminal({
 
-    const [history, setHistory] = useState([]);
+    isOpen,
+
+    onToggle,
+
+}) {
+
+    const { openFile } = useFile();
+
+    const [history, setHistory] = useState([
+
+        "Welcome to NeeleshOS 🚀",
+
+        "",
+
+        "Type 'help' to get started.",
+
+        "",
+
+    ]);
 
     const [input, setInput] = useState("");
 
-    function executeCommand() {
+    const terminalRef = useRef(null);
 
-        const command = input.trim().toLowerCase();
+    useEffect(() => {
 
-        if (!command) return;
+        terminalRef.current?.scrollTo({
 
-        const output = commands[command] || [
-            `Command not found: ${command}`
-        ];
+            top: terminalRef.current.scrollHeight,
 
-        setHistory(prev => [
+            behavior: "smooth",
 
-            ...prev,
+        });
 
-            {
-                command,
-
-                output
-
-            }
-
-        ]);
-
-        setInput("");
-
-    }
+    }, [history]);
 
     return (
 
         <div
             className="
-            h-72
-            bg-[#1E1E1E]
+            bg-[#181818]
             border-t
             border-[#333]
-            p-4
-            font-mono
-            text-sm
-            overflow-y-auto
             "
         >
 
-            {history.map((item, index) => (
+            {/* Header */}
 
-                <div key={index}>
+            <button
 
-                    <div className="text-green-400">
+                onClick={onToggle}
 
-                        guest@neelesh:~$ {item.command}
+                className="
+                w-full
+                h-10
+                px-4
+                flex
+                items-center
+                gap-2
+                bg-[#252526]
+                hover:bg-[#2D2D30]
+                text-gray-300
+                text-sm
+                font-medium
+                "
 
-                    </div>
+            >
 
-                    {item.output.map((line, i) => (
+                <span className="text-base">
+                    {isOpen ? <VscChevronDown /> : <VscChevronRight />}
+                </span>
+
+                <span>
+
+                    TERMINAL
+
+                </span>
+
+            </button>
+
+            {/* Body */}
+
+            <div
+
+                className={`
+                overflow-hidden
+                transition-all
+                duration-300
+                ${isOpen ? "h-64" : "h-0"}
+                `}
+
+            >
+
+                <div
+
+                    ref={terminalRef}
+
+                    className="
+                    h-full
+                    overflow-y-auto
+                    p-4
+                    font-mono
+                    text-sm
+                    "
+
+                >
+
+                    {history.map((line, index) => (
 
                         <div
-                            key={i}
-                            className="text-gray-300"
+
+                            key={index}
+
+                            className="text-gray-300 whitespace-pre-wrap"
+
                         >
 
                             {line}
@@ -72,46 +128,52 @@ export default function Terminal() {
 
                     ))}
 
+                    <div className="flex mt-3">
+
+                        <span className="text-green-400 mr-2">
+
+                            guest@neelesh:~$
+
+                        </span>
+
+                        <input
+
+                            value={input}
+
+                            onChange={(e) =>
+                                setInput(e.target.value)
+                            }
+
+                            onKeyDown={(e) => {
+
+                                if (e.key === "Enter") {
+
+                                    executeCommand(input, {
+
+                                        openFile,
+
+                                        setHistory,
+
+                                        setInput,
+
+                                    });
+
+                                }
+
+                            }}
+
+                            className="
+                            flex-1
+                            bg-transparent
+                            outline-none
+                            text-white
+                            "
+
+                        />
+
+                    </div>
+
                 </div>
-
-            ))}
-
-            <div className="flex mt-4">
-
-                <span className="text-green-400 mr-2">
-
-                    guest@neelesh:~$
-
-                </span>
-
-                <input
-
-                    autoFocus
-
-                    value={input}
-
-                    onChange={(e) =>
-                        setInput(e.target.value)
-                    }
-
-                    onKeyDown={(e) => {
-
-                        if (e.key === "Enter") {
-
-                            executeCommand();
-
-                        }
-
-                    }}
-
-                    className="
-                    flex-1
-                    bg-transparent
-                    outline-none
-                    text-white
-                    "
-
-                />
 
             </div>
 
