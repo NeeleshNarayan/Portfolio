@@ -4,7 +4,7 @@ const files = [
     name: "README.md",
     type: "readme",
     extension: "md",
-    icon: "markdown",
+    language: "markdown",
     component: "README",
   },
   {
@@ -12,7 +12,7 @@ const files = [
     name: "Projects.jsx",
     type: "projects",
     extension: "jsx",
-    icon: "react",
+    language: "react",
     component: "Projects",
   },
   {
@@ -20,7 +20,7 @@ const files = [
     name: "Skills.json",
     type: "skills",
     extension: "json",
-    icon: "json",
+    language: "json",
     component: "Skills",
   },
   {
@@ -28,7 +28,7 @@ const files = [
     name: "Contact.sh",
     type: "contact",
     extension: "sh",
-    icon: "terminal",
+    language: "terminal",
     component: "Contact",
   },
 ];

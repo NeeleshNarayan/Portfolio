@@ -1,7 +1,7 @@
-import Hero from "../sections/Hero/Hero";
-import README from "../sections/README/README";
+import Hero from "../../sections/Hero/Hero";
+import README from "../../sections/README/README";
 
-import { useFile } from "../context/FileContext";
+import { useFile } from "../../context/FileContext";
 
 export default function FileRenderer() {
 

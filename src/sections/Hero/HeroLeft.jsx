@@ -4,6 +4,17 @@ import HeroStats from "../Hero/HeroStats";
 import profile from "../../data/profile"
 
 export default function HeroLeft() {
+
+
+    const scrollToWorkspace = () => {
+        document
+            .getElementById("workspace")
+            ?.scrollIntoView({
+                behavior: "smooth",
+            });
+    };
+
+
     return (
         <motion.div
             initial={{ opacity: 0, x: -80 }}
@@ -32,21 +43,21 @@ export default function HeroLeft() {
                 <TypeAnimation
 
                     sequence={profile.professional.roles.flatMap(role => [role, 1800])}
-                    /*sequence={[
-                        "React Developer",
-                        1800,
+                /*sequence={[
+                    "React Developer",
+                    1800,
 
-                        "Frontend Developer",
-                        1800,
+                    "Frontend Developer",
+                    1800,
 
-                        "Problem Solver",
-                        1800,
+                    "Problem Solver",
+                    1800,
 
-                        "UI Enthusiast",
-                        1800,
-                    ]}
+                    "UI Enthusiast",
+                    1800,
+                ]}
 
-                    repeat={Infinity}*/
+                repeat={Infinity}*/
 
                 />
 
@@ -59,6 +70,20 @@ export default function HeroLeft() {
             </p>
 
             <div className="flex gap-5 mt-10">
+
+                <button
+                    onClick={scrollToWorkspace}
+                    className="bg-blue-600
+                    hover:bg-blue-700
+                    duration-300
+                    px-7
+                    py-3
+                    rounded-lg
+                    font-medium
+                    text-white"
+                >
+                    Explore My Work
+                </button>
 
                 <button
                     className="

@@ -1,5 +1,5 @@
-import files from "../data/files";
-import { useFile } from "../context/FileContext";
+import files from "../../data/files";
+import { useFile } from "../../context/FileContext";
 
 import {
     VscJson,
@@ -40,7 +40,7 @@ export default function Explorer() {
 
     return (
 
-        <div className="w-64 bg-[#111111]">
+        <div className="w-64 overflow-y-auto bg-[#111111]">
 
             <div className="px-4 py-3 border-b border-gray-800 text-sm font-semibold tracking-wide text-gray-300">
 
@@ -66,11 +66,12 @@ export default function Explorer() {
                         w-full
                         px-3
                         py-2
-                        rounded-md
-                        transition
+                        rounded-sm
+                        transition-all
+                        duration-150
 
                         ${
-                            activeFile === file.type
+                            activeFile?.type === file.type
                                 ? "bg-[#2A2D2E] text-white"
                                 : "text-gray-400 hover:bg-[#202020]"
                         }

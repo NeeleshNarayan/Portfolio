@@ -46,7 +46,7 @@ export function FileProvider({ children }) {
 
     if (activeFile?.type === fileType) {
 
-        setActiveFile(updated[0] || null);
+        setActiveFile(updated[0]);
 
     }
 

@@ -1,44 +1,60 @@
 const readme = {
-  about: {
-    heading: "🚀 About Me",
 
-    paragraph:
-      "I'm a passionate Frontend Developer currently pursuing B.Tech while building modern web applications with React and Tailwind CSS.",
-  },
+    about: {
 
-  currentFocus: {
-    heading: "🎯 Current Focus",
+        paragraph:
+            "I'm a passionate Frontend Developer currently pursuing B.Tech. I enjoy building modern web applications with React while continuously improving my problem-solving skills through Data Structures and Algorithms.",
 
-    items: [
-      "Building React Projects",
-      "Learning Backend Development",
-      "Preparing for Internships",
+    },
+
+    journey: {
+
+        items: [
+
+            "💻 Solved 400+ Coding Problems",
+
+            "🚀 Learning React & Frontend Development",
+
+            "🏆 DSA Lead",
+
+            "🎓 B.Tech Student",
+
+        ],
+
+    },
+
+    focus: {
+
+        items: [
+
+            "Building Production React Apps",
+
+            "Learning Backend Development",
+
+            "Preparing for Software Engineering Internships",
+
+        ],
+
+    },
+
+    techStack: [
+
+        "React",
+
+        "JavaScript",
+
+        "Tailwind CSS",
+
+        "HTML",
+
+        "CSS",
+
+        "Git",
+
+        "GitHub",
+
     ],
-  },
 
-  quickFacts: {
-    heading: "📊 Quick Facts",
-
-    items: [
-      "400+ Coding Problems Solved",
-      "DSA Lead",
-      "React Enthusiast",
-      "Open To Internship",
-    ],
-  },
-
-  techStack: {
-    heading: "🛠 Tech Stack",
-
-    technologies: [
-      "React",
-      "JavaScript",
-      "Tailwind CSS",
-      "HTML",
-      "CSS",
-      "Git",
-    ],
-  },
 };
 
 export default readme;

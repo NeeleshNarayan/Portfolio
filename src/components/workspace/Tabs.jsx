@@ -1,5 +1,5 @@
-import files from "../data/files";
-import { useFile } from "../context/FileContext";
+import files from "../../data/files";
+import { useFile } from "../../context/FileContext";
 
 export default function Tabs() {
 
@@ -23,17 +23,17 @@ export default function Tabs() {
                         key={file.id}
 
                         className={`
+                            h-full
+                            px-4
                             flex
                             items-center
-                            px-4
+                            gap-3
                             border-r
-                            border-gray-700
-                            cursor-pointer
+                            border-[#2D2D30]
 
-                            ${
-                                activeFile?.type === file.type
-                                    ? "bg-[#1F242D]"
-                                    : ""
+                            ${activeFile?.type === file.type
+                                ? "bg-[#1E1E1E] border-t-2 border-t-[#007ACC]"
+                                : "bg-[#2D2D30]"
                             }
                         `}
 
