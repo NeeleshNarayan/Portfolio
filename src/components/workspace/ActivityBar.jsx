@@ -14,7 +14,7 @@ const items = [
 
 export default function ActivityBar() {
     return (
-        <div className="w-14 flex-shrink-0 bg-[#181818] border-r border-gray-800 flex flex-col items-center py-4 gap-6">
+        <div className="w-14 shrink-0 bg-[#181818] border-r border-gray-800 flex flex-col items-center py-4 gap-6">
 
             {items.map((item) => {
 
