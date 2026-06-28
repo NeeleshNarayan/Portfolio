@@ -14,7 +14,7 @@ const projects = [
 
     github: "https://github.com/NeeleshNarayan/Portfolio",
 
-    live: "#",
+    live: "https://portfolio-omega-six-n1vkd17177.vercel.app/",
 
     status: "In Progress",
   },
@@ -29,7 +29,6 @@ const projects = [
     tech: [
       "React",
       "Tailwind CSS",
-      "Firebase",
     ],
 
     github: "#",

@@ -1,4 +1,6 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import socials from "../data/contact"
+import contact from "../data/contact";
 
 export default function Navbar() {
   return (
@@ -10,9 +12,9 @@ export default function Navbar() {
 
       <div className="flex gap-5 text-gray-400 text-lg">
 
-        <FaGithub className="hover:text-white cursor-pointer duration-300"/>
+        <a href={contact.github} target="_blank"><FaGithub className="hover:text-white cursor-pointer duration-300"/></a>
 
-        <FaLinkedin className="hover:text-blue-400 cursor-pointer duration-300"/>
+        <a href={contact.linkedin} target="_blank"><FaLinkedin className="hover:text-blue-400 cursor-pointer duration-300"/></a>
 
       </div>
 

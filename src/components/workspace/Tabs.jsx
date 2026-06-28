@@ -30,6 +30,7 @@ export default function Tabs() {
                             gap-3
                             border-r
                             border-[#2D2D30]
+                            text-white
 
                             ${activeFile?.type === file.type
                                 ? "bg-[#1E1E1E] border-t-2 border-t-[#007ACC]"

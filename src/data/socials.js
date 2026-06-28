@@ -7,12 +7,12 @@ const socials = [
   {
     id: "linkedin",
     label: "LinkedIn",
-    url: "https://linkedin.com/in/your-linkedin",
+    url: "https://www.linkedin.com/in/neelesh-narayan-mishra-424823271/",
   },
   {
     id: "email",
     label: "Email",
-    url: "mailto:your-email@example.com",
+    url: "neeleshmishra2005@gmail.com",
   },
 ];
 

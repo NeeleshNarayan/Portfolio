@@ -1,11 +1,11 @@
 const contact = {
     github: "https://github.com/NeeleshNarayan",
 
-    linkedin: "https://linkedin.com/in/YOUR_LINKEDIN",
+    linkedin: "https://www.linkedin.com/in/neelesh-narayan-mishra-424823271/",
 
-    email: "neelesh@example.com",
+    email: "neeleshmishra2005@gmail.com",
 
-    resume: "/resume.pdf",
+    resume: "/Neelesh_CV.pdf",
 };
 
 export default contact;

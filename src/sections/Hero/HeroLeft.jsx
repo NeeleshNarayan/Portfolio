@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import HeroStats from "../Hero/HeroStats";
 import profile from "../../data/profile"
+import resume from "../../../public/Neelesh_CV.pdf"
+import contact from "../../data/contact";
 
 export default function HeroLeft() {
 
@@ -86,6 +88,7 @@ export default function HeroLeft() {
                 </button>
 
                 <button
+                onClick={() => window.open(contact.resume)}
                     className="
                     bg-blue-600
                     hover:bg-blue-700
@@ -101,6 +104,7 @@ export default function HeroLeft() {
                 </button>
 
                 <button
+                onClick={()=>window.open("https://github.com/NeeleshNarayan","_blank")}
                     className="
                     border
                     border-gray-600
