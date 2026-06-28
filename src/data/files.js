@@ -4,32 +4,31 @@ const files = [
     name: "README.md",
     type: "readme",
     extension: "md",
-    language: "markdown",
-    component: "README",
+    language: "Markdown",
   },
+
   {
     id: "projects",
     name: "Projects.jsx",
     type: "projects",
     extension: "jsx",
-    language: "react",
-    component: "Projects",
+    language: "React JSX",
   },
+
   {
     id: "skills",
     name: "Skills.json",
     type: "skills",
     extension: "json",
-    language: "json",
-    component: "Skills",
+    language: "JSON",
   },
+
   {
     id: "contact",
     name: "Contact.sh",
     type: "contact",
     extension: "sh",
-    language: "terminal",
-    component: "Contact",
+    language: "Shell Script",
   },
 ];
 

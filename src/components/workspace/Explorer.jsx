@@ -1,95 +1,43 @@
-import files from "../../data/files";
-import { useFile } from "../../context/FileContext";
-
-import {
-    VscJson,
-    VscMarkdown,
-    VscCode,
-    VscTerminalBash
-} from "react-icons/vsc";
+import explorerTree from "../../data/explorerTree";
+import ExplorerNode from "./ExplorerNode";
 
 export default function Explorer() {
 
-    
-    const {
-    activeFile,
-    openFile
-} = useFile();
-
-    const getIcon = (type) => {
-
-        switch (type) {
-
-            case "readme":
-                return <VscMarkdown />;
-
-            case "projects":
-                return <VscCode />;
-
-            case "skills":
-                return <VscJson />;
-
-            case "contact":
-                return <VscTerminalBash />;
-
-            default:
-                return <VscCode />;
-        }
-
-    };
-
     return (
 
-        <div className="w-64 overflow-y-auto bg-[#111111]">
+        <aside
+            className="
+            w-64
+            bg-[#181818]
+            border-r
+            border-[#2D2D30]
+            overflow-y-auto
+            "
+        >
 
-            <div className="px-4 py-3 border-b border-gray-800 text-sm font-semibold tracking-wide text-gray-300">
+            <div className="px-4 py-3 text-xs text-gray-500 font-semibold">
 
                 EXPLORER
 
             </div>
 
-            <div className="p-2">
+            <div className="px-2">
 
-                {files.map(file => (
+                {explorerTree.map((node) => (
 
-                    <button
+                    <ExplorerNode
 
-                        key={file.id}
+                        key={node.id}
 
-                        onClick={() => openFile(file.type)}
+                        node={node}
 
-                        className={`
-
-                        flex
-                        items-center
-                        gap-3
-                        w-full
-                        px-3
-                        py-2
-                        rounded-sm
-                        transition-all
-                        duration-150
-
-                        ${
-                            activeFile?.type === file.type
-                                ? "bg-[#2A2D2E] text-white"
-                                : "text-gray-400 hover:bg-[#202020]"
-                        }
-
-                        `}
-                    >
-
-                        {getIcon(file.type)}
-
-                        {file.name}
-
-                    </button>
+                    />
 
                 ))}
 
             </div>
 
-        </div>
+        </aside>
 
     );
 

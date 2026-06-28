@@ -1,6 +1,8 @@
 import Hero from "../../sections/Hero/Hero";
 import README from "../../sections/README/README";
 import Projects from "../../sections/Projects/Projects"
+import Skills from "../../sections/Skills/Skills";
+import Contact from "../../sections/Contact/Contact"
 
 import { useFile } from "../../context/FileContext";
 
@@ -14,10 +16,10 @@ export default function FileRenderer() {
             return <README />;
 
         case "skills":
-            return <h1 className="text-white text-4xl">Skills</h1>;
+            return <Skills />;
 
         case "contact":
-            return <h1 className="text-white text-4xl">Contact</h1>;
+            return <Contact />;
 
         case "projects":
             return <Projects />;

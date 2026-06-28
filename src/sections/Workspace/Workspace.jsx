@@ -1,31 +1,51 @@
+import { useState } from "react";
+
 import ActivityBar from "../../components/workspace/ActivityBar";
 import Explorer from "../../components/workspace/Explorer";
 import Editor from "../../components/workspace/Editor";
+import Terminal from "../../components/workspace/Terminal";
 import StatusBar from "../../components/workspace/StatusBar";
 
 export default function Workspace() {
-  return (
-    <section
-      id="workspace"
-      className="h-screen bg-[#0D1117]"
-    >
-      <div className="flex flex-col h-full">
 
-        {/* Workspace */}
-        <div className="flex flex-1 overflow-hidden">
+    const [terminalOpen, setTerminalOpen] = useState(false);
 
-          <ActivityBar />
+    return (
 
-          <Explorer />
+        <section
+            id="workspace"
+            className="h-screen bg-[#0D1117]"
+        >
 
-          <Editor />
+            <div className="flex flex-col h-full">
 
-        </div>
+                {/* Main Workspace */}
 
-        {/* Status Bar */}
-        <StatusBar />
+                <div className="flex flex-1 overflow-hidden">
 
-      </div>
-    </section>
-  );
+                    <ActivityBar />
+
+                    <Explorer />
+
+                    <Editor />
+
+                </div>
+
+                {/* Terminal */}
+
+                <Terminal
+                    isOpen={terminalOpen}
+                    onToggle={() => setTerminalOpen(!terminalOpen)}
+                />
+
+                {/* Status Bar */}
+
+                <StatusBar />
+
+            </div>
+
+        </section>
+
+    );
+
 }
